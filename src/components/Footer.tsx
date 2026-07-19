@@ -1,4 +1,5 @@
 import { NAV_LINKS, PRODUCT_NAME } from "../lib/constants";
+import { Logo } from "./Logo";
 
 const FOOTER_LINKS = {
   Product: [
@@ -25,16 +26,9 @@ export function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-2.5">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-white">
-                P
-              </span>
-              <span className="font-display text-base font-semibold text-text">
-                {PRODUCT_NAME}
-              </span>
-            </div>
+            <Logo size="md" showTagline />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-              Business documents. Owned forever.
+              Owned forever. No subscription.
             </p>
             <p className="mt-6 text-xs text-subtle">
               Built for people who hate subscriptions.

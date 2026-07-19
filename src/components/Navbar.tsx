@@ -2,6 +2,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { NAV_LINKS, PRODUCT_NAME } from "../lib/constants";
 import { useScrolled } from "../hooks/useScrollSpy";
+import { Logo } from "./Logo";
 import { Button } from "./ui/Button";
 
 export function Navbar() {
@@ -17,13 +18,8 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <a href="#" className="flex items-center gap-2.5">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-white">
-            P
-          </span>
-          <span className="font-display text-base font-semibold tracking-tight text-text">
-            {PRODUCT_NAME}
-          </span>
+        <a href="#" className="inline-flex">
+          <Logo size="sm" />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
