@@ -62,7 +62,7 @@ export function TemplateShowcase() {
       variant="band"
       label="Templates"
       title="Documents your clients will remember."
-      description="Five premium designs for US, UK, EU, and German businesses — each with distinct typography, spacing, and character."
+      description="Premium designs for US, UK, EU, and German businesses — each with distinct typography, spacing, and character."
       className="overflow-hidden"
     >
       <AnimatedInView>

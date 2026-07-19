@@ -1,17 +1,17 @@
-import { NAV_LINKS, PRODUCT_NAME } from "../lib/constants";
+import { NAV_LINKS, PRODUCT_NAME, ROADMAP_URL, SECTION_IDS } from "../lib/constants";
 import { Logo } from "./Logo";
 
 const FOOTER_LINKS = {
   Product: [
-    { label: "Features", href: "#features" },
-    { label: "Workflow", href: "#workflow" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Features", href: `#${SECTION_IDS.features}` },
+    { label: "Pricing", href: `#${SECTION_IDS.pricing}` },
+    { label: "Our Story", href: `#${SECTION_IDS.story}` },
+    { label: "FAQ", href: `#${SECTION_IDS.faq}` },
   ],
   Resources: [
-    { label: "Documentation", href: "#" },
-    { label: "Release Notes", href: "#" },
-    { label: "Support", href: "#" },
+    { label: "Roadmap", href: `#${SECTION_IDS.roadmap}` },
+    { label: "Feature requests", href: ROADMAP_URL },
+    { label: "Support", href: "mailto:hello@paperline.app" },
   ],
   Legal: [
     { label: "Privacy", href: "#" },
@@ -28,10 +28,11 @@ export function Footer() {
           <div>
             <Logo size="md" showTagline />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-              Owned forever. No subscription.
+              Send documents you&apos;re proud of. Keep every record on your
+              computer.
             </p>
             <p className="mt-6 text-xs text-subtle">
-              Built for people who hate subscriptions.
+              Independent software. No subscription.
             </p>
           </div>
 

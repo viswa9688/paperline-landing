@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { AnimatedInView } from "./ui/AnimatedInView";
 
-const MONTHLY_PAYMENTS = ["$19", "$19", "$19", "$19", "$19"];
+const MONTHLY_PAYMENTS = ["$30", "$30", "$30", "$30", "$30"];
 
 export function ForeverPayment() {
   const prefersReducedMotion = useReducedMotion();

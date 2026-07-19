@@ -1,4 +1,4 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Sparkles } from "lucide-react";
 import { PILLAR_BADGES, SECTION_IDS } from "../lib/constants";
 import { AnimatedInView } from "./ui/AnimatedInView";
 import { Button } from "./ui/Button";
@@ -19,22 +19,23 @@ export function Hero() {
       <div className="relative mx-auto max-w-5xl">
         <AnimatedInView>
           <p className="mb-8 text-center text-xs font-medium tracking-[0.25em] text-accent uppercase">
-            Offline · Lifetime · Yours
+            Free to try · Yours to keep
           </p>
         </AnimatedInView>
 
         <AnimatedInView delay={0.05}>
           <h1 className="text-center font-display text-[clamp(3rem,6.5vw,5.25rem)] leading-[1.02] font-semibold tracking-[-0.03em] text-text">
-            Create business documents people actually enjoy receiving.
+            Send invoices you&apos;re proud of.
+            <span className="block mt-2 text-muted">
+              Keep every record yours.
+            </span>
           </h1>
         </AnimatedInView>
 
         <AnimatedInView delay={0.1}>
           <p className="mx-auto mt-10 max-w-2xl text-center text-lg leading-relaxed text-muted md:text-xl">
-            Invoices. Quotes. Purchase Orders. Receipts. Credit Notes.
-            <span className="block mt-2 text-text">
-              Built beautifully. Owned forever.
-            </span>
+            Look professional when you bill. Sleep well knowing your client list
+            never lives on someone else&apos;s servers.
           </p>
         </AnimatedInView>
 
@@ -42,8 +43,8 @@ export function Hero() {
 
         <AnimatedInView delay={0.14}>
           <p className="prose-narrow mx-auto mt-10 text-center text-base text-subtle">
-            One place for every document your business sends — owned forever,
-            no subscription.
+            Quotes, invoices, and receipts — beautiful enough to impress,
+            private enough to trust.
           </p>
         </AnimatedInView>
 
@@ -57,12 +58,18 @@ export function Hero() {
 
         <AnimatedInView delay={0.22}>
           <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-            <Button>Download for Mac</Button>
-            <Button variant="secondary" href={`#${SECTION_IDS.demo}`}>
-              Try the demo
+            <Button href={`#${SECTION_IDS.demo}`}>
+              <Sparkles className="h-4 w-4" />
+              Try the demo — free
+            </Button>
+            <Button variant="secondary" href={`#${SECTION_IDS.pricing}`}>
+              Download free
               <ArrowDown className="h-4 w-4" />
             </Button>
           </div>
+          <p className="mt-4 text-center text-xs text-subtle">
+            No credit card · Pay once when you&apos;re ready to export
+          </p>
         </AnimatedInView>
       </div>
     </section>

@@ -33,15 +33,15 @@ export function Demo() {
         <div className="lg:sticky lg:top-28">
           <AnimatedInView>
             <p className="text-xs font-medium tracking-[0.2em] text-accent uppercase">
-              See it work
+              Try it now
             </p>
             <h2 className="display-lg mt-4 text-text">
               Type what you need.
               <span className="block text-muted">Watch the document appear.</span>
             </h2>
             <p className="prose-narrow mt-6 text-base leading-relaxed text-muted">
-              Describe an invoice, quote, or receipt in plain language. Paperline
-              builds the draft beside you.
+              No signup, no download — describe an invoice or quote in plain
+              language and see it take shape instantly.
             </p>
           </AnimatedInView>
 

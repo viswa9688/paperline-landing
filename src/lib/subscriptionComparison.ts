@@ -6,7 +6,7 @@ export interface ComparisonRow {
 export const SUBSCRIPTION_COMPARISON: ComparisonRow[] = [
   {
     problem: "Monthly fees that never stop",
-    solution: "One-time purchase — own it forever",
+    solution: "One payment — own it forever",
   },
   {
     problem: "Requires internet to work",
@@ -14,14 +14,14 @@ export const SUBSCRIPTION_COMPARISON: ComparisonRow[] = [
   },
   {
     problem: "Your data stored in their cloud",
-    solution: "SQLite database on your computer",
+    solution: "Your data stays on your computer",
   },
   {
     problem: "Vendor lock-in with no easy exit",
-    solution: "Export, backup, and restore anytime",
+    solution: "Backup anywhere, anytime",
   },
   {
     problem: "Generic templates you can't customize",
-    solution: "Drag-and-drop document designer",
+    solution: "Documents that look like your brand",
   },
 ];

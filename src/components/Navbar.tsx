@@ -1,6 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { NAV_LINKS, PRODUCT_NAME } from "../lib/constants";
+import { NAV_LINKS, SECTION_IDS } from "../lib/constants";
 import { useScrolled } from "../hooks/useScrollSpy";
 import { Logo } from "./Logo";
 import { Button } from "./ui/Button";
@@ -35,7 +35,10 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button href="#pricing">Get {PRODUCT_NAME}</Button>
+          <Button variant="ghost" href={`#${SECTION_IDS.pricing}`}>
+            Download free
+          </Button>
+          <Button href={`#${SECTION_IDS.demo}`}>Try free</Button>
         </div>
 
         <button
@@ -61,8 +64,11 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Button href="#pricing" className="w-full">
-              Get {PRODUCT_NAME}
+            <Button href={`#${SECTION_IDS.demo}`} className="w-full">
+              Try free
+            </Button>
+            <Button variant="secondary" href={`#${SECTION_IDS.pricing}`} className="w-full">
+              Download free
             </Button>
           </nav>
         </div>

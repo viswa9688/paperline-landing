@@ -1,10 +1,5 @@
+import { OPTIONAL_ASSISTANT_MODES } from "../lib/features";
 import { AnimatedInView } from "./ui/AnimatedInView";
-
-const MODES = [
-  { label: "Off", description: "Manual creation. No assistant." },
-  { label: "Local", description: "Ollama or LM Studio on your machine." },
-  { label: "Your API key", description: "OpenAI or Claude — your key, your choice." },
-];
 
 export function AIAssistant() {
   return (
@@ -17,19 +12,20 @@ export function AIAssistant() {
                 Optional
               </p>
               <h2 className="display-lg mt-3 text-text">
-                An assistant, when you want one
+                Want help drafting? Turn it on later.
               </h2>
               <p className="prose-narrow mt-4 text-sm text-muted">
-                AI is optional. Your documents aren&apos;t.
+                Paperline works great without it. If you want a hand writing
+                line items or filling in details, you choose when — and how.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-3 lg:gap-4">
-              {MODES.map((mode, index) => (
+              {OPTIONAL_ASSISTANT_MODES.map((mode, index) => (
                 <div
                   key={mode.label}
                   className={`rounded-2xl border px-6 py-5 transition-colors ${
-                    index === 1
+                    index === 0
                       ? "border-accent/30 bg-accent/5"
                       : "border-border bg-surface"
                   }`}
@@ -37,7 +33,7 @@ export function AIAssistant() {
                   <p className="font-display text-lg font-medium text-text">
                     {mode.label}
                   </p>
-                  <p className="mt-1 max-w-[180px] text-xs text-muted">
+                  <p className="mt-1 max-w-[200px] text-xs text-muted">
                     {mode.description}
                   </p>
                 </div>

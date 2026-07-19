@@ -8,16 +8,16 @@ export const PRICING = {
 
 export const NAV_LINKS = [
   { label: "Features", href: "#features" },
-  { label: "Workflow", href: "#workflow" },
   { label: "Pricing", href: "#pricing" },
+  { label: "Our Story", href: "#story" },
   { label: "FAQ", href: "#faq" },
 ] as const;
 
 export const PILLAR_BADGES = [
-  "Offline First",
-  "One Lifetime License",
-  "Your Data Stays on Your Computer",
-  "No Monthly Subscription",
+  "Your data stays on your computer",
+  "Works without Wi-Fi",
+  "Backup anywhere, anytime",
+  "No monthly bill",
 ] as const;
 
 export const DEMO_PROMPTS = [
@@ -29,7 +29,28 @@ export const DEMO_PROMPTS = [
 export const SECTION_IDS = {
   demo: "demo",
   features: "features",
-  workflow: "workflow",
   pricing: "pricing",
+  story: "story",
+  roadmap: "roadmap",
   faq: "faq",
+} as const;
+
+/** Public feature board — swap when live */
+export const ROADMAP_URL = "https://github.com/paperline-app/paperline/discussions/categories/ideas";
+
+export const ROADMAP_ITEMS = {
+  planned: [
+    "Stripe payment links on invoices",
+    "Bulk PDF export",
+    "Client portal for quote approval",
+  ],
+  inProgress: [
+    "Windows & Linux builds",
+    "Import from FreshBooks & Wave",
+  ],
+  shipped: [
+    "Quote → invoice in one click",
+    "Five premium templates",
+    "Offline-first desktop app",
+  ],
 } as const;

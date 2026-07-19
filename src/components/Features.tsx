@@ -1,14 +1,12 @@
-import { FEATURES } from "../lib/features";
+import {
+  PRIVACY_ICONS,
+  PRIVACY_OWNERSHIP_ITEMS,
+  WORKFLOW_GROUPS,
+} from "../lib/features";
 import { SECTION_IDS } from "../lib/constants";
 import { AnimatedInView } from "./ui/AnimatedInView";
 
 export function Features() {
-  const documents = FEATURES.filter((f) => f.category === "Documents");
-  const business = FEATURES.filter((f) => f.category === "Business");
-  const design = FEATURES.filter((f) => f.category === "Design");
-  const platform = FEATURES.filter((f) => f.category === "Platform");
-  const optional = FEATURES.filter((f) => f.category === "Optional");
-
   return (
     <section id={SECTION_IDS.features} className="chapter px-6">
       <div className="mx-auto max-w-7xl">
@@ -17,116 +15,87 @@ export function Features() {
             Features
           </p>
           <h2 className="display-xl mt-4 max-w-2xl text-text">
-            Everything your business sends.
+            Built around how you actually run a business.
           </h2>
+          <p className="prose-medium mt-5 text-muted">
+            Not a checklist of document types — real workflows from first hello
+            to getting paid.
+          </p>
         </AnimatedInView>
 
-        <div className="mt-24 space-y-32">
-          <AnimatedInView>
-            <div className="grid gap-12 lg:grid-cols-[280px_1fr]">
-              <div>
-                <h3 className="font-display text-2xl font-medium text-text">Documents</h3>
-                <p className="prose-narrow mt-3 text-sm text-muted">
-                  Every format you need to run a business, designed to look professional.
-                </p>
-              </div>
-              <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2">
-                {documents.map((feature) => {
-                  const Icon = feature.icon;
+        <div className="mt-24 space-y-28">
+          {WORKFLOW_GROUPS.map((group, groupIndex) => {
+            const Icon = group.icon;
+            return (
+              <AnimatedInView key={group.id} delay={groupIndex * 0.05}>
+                <div className="grid gap-10 lg:grid-cols-[240px_1fr] lg:gap-16">
+                  <div className="lg:sticky lg:top-28 lg:self-start">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border bg-surface">
+                      <Icon className="h-5 w-5 text-accent" />
+                    </div>
+                    <h3 className="mt-5 font-display text-2xl font-medium text-text">
+                      {group.title}
+                    </h3>
+                    <p className="prose-narrow mt-3 text-sm leading-relaxed text-muted">
+                      {group.lead}
+                    </p>
+                  </div>
+
+                  <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2">
+                    {group.items.map((item) => (
+                      <div
+                        key={item.title}
+                        className="bg-surface p-6 transition-colors hover:bg-surface-elevated"
+                      >
+                        <h4 className="text-sm font-medium text-text">
+                          {item.title}
+                        </h4>
+                        <p className="mt-2 text-xs leading-relaxed text-muted">
+                          {item.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </AnimatedInView>
+            );
+          })}
+
+          <AnimatedInView delay={0.1}>
+            <div
+              id="privacy"
+              className="rounded-3xl border border-accent/20 bg-accent/[0.03] p-8 md:p-12"
+            >
+              <p className="text-xs font-medium tracking-[0.2em] text-accent uppercase">
+                Privacy & Ownership
+              </p>
+              <h3 className="mt-4 font-display text-2xl font-medium text-text md:text-3xl">
+                Your business stays yours.
+              </h3>
+              <p className="prose-medium mt-4 text-muted">
+                Everything about where your data lives, how you back it up, and
+                what you pay — in one place.
+              </p>
+
+              <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {PRIVACY_OWNERSHIP_ITEMS.map((item, index) => {
+                  const Icon = PRIVACY_ICONS[index];
                   return (
-                    <div
-                      key={feature.title}
-                      className="group flex gap-4 bg-surface p-6 transition-colors hover:bg-surface-elevated"
-                    >
-                      <Icon className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                    <div key={item.title} className="flex gap-4">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-border bg-background">
+                        <Icon className="h-4 w-4 text-accent" />
+                      </div>
                       <div>
-                        <h4 className="text-sm font-medium text-text">{feature.title}</h4>
-                        <p className="mt-1 text-xs leading-relaxed text-muted">
-                          {feature.description}
+                        <h4 className="text-sm font-medium text-text">
+                          {item.title}
+                        </h4>
+                        <p className="mt-1.5 text-xs leading-relaxed text-muted">
+                          {item.description}
                         </p>
                       </div>
                     </div>
                   );
                 })}
-              </div>
-            </div>
-          </AnimatedInView>
-
-          <AnimatedInView delay={0.05}>
-            <div className="grid gap-8 lg:grid-cols-3">
-              {business.slice(0, 6).map((feature) => {
-                const Icon = feature.icon;
-                return (
-                  <div
-                    key={feature.title}
-                    className="border-t border-border pt-6"
-                  >
-                    <Icon className="h-4 w-4 text-accent" />
-                    <h4 className="mt-4 font-display text-lg font-medium text-text">
-                      {feature.title}
-                    </h4>
-                    <p className="prose-narrow mt-2 text-sm text-muted">
-                      {feature.description}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </AnimatedInView>
-
-          <AnimatedInView delay={0.08}>
-            <div className="rounded-2xl border border-border bg-surface p-8 md:p-12">
-              <h3 className="font-display text-xl font-medium text-text">Business tools</h3>
-              <div className="mt-8 grid gap-x-12 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
-                {business.slice(6).concat(design).map((feature) => (
-                  <div key={feature.title} className="flex items-baseline gap-3">
-                    <span className="text-accent">—</span>
-                    <div>
-                      <p className="text-sm font-medium text-text">{feature.title}</p>
-                      <p className="mt-0.5 text-xs text-muted">{feature.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </AnimatedInView>
-
-          <AnimatedInView delay={0.1}>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {platform.map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <div
-                    key={feature.title}
-                    className={`rounded-2xl border border-border p-6 ${
-                      index === 0 ? "bg-accent/5 border-accent/20 lg:col-span-1" : "bg-background"
-                    }`}
-                  >
-                    <Icon className="h-5 w-5 text-accent" />
-                    <h4 className="mt-4 font-display text-base font-medium text-text">
-                      {feature.title}
-                    </h4>
-                    <p className="mt-2 text-sm text-muted">{feature.description}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </AnimatedInView>
-
-          <AnimatedInView delay={0.12}>
-            <div className="border-t border-dashed border-border pt-16">
-              <p className="text-xs tracking-[0.2em] text-subtle uppercase">
-                Optional — Assistant
-              </p>
-              <div className="mt-8 flex flex-wrap gap-x-12 gap-y-6">
-                {optional.map((feature) => (
-                  <div key={feature.title} className="min-w-[200px]">
-                    <p className="text-sm font-medium text-muted">{feature.title}</p>
-                    <p className="mt-1 max-w-xs text-xs text-subtle">
-                      {feature.description}
-                    </p>
-                  </div>
-                ))}
               </div>
             </div>
           </AnimatedInView>
